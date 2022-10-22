@@ -16,4 +16,4 @@
 
 <h2>O Projeto</h2>
 
-<p>Para acessar a página do projeto no GitHub Pages, <a href="https://diegobernardes95.github.io/Projeto-Individual-Mod.2/">clique aqui</a>.</p>
+<p>Para acessar a página do projeto no GitHub Pages, <a href="https://diegobernardes95.github.io/Projeto-Mensagem-Oculta/">clique aqui</a>.</p>
