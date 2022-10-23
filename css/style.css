@@ -23,6 +23,7 @@ form{
     text-align: center;
     font-family: 'Silkscreen', cursive;
     margin-top: 40px;
+    width: 50%;
 }
 form h1{
     margin-left: 15px;
@@ -94,7 +95,7 @@ form textarea{
     margin-top: 20px;
     margin-right: 10px;
 }
-@media(max-width: 700px){
+@media(max-width: 1035px){
     form{
         width: 80%;
     }

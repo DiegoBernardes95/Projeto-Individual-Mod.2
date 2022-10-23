@@ -10,19 +10,23 @@
 <body>
     <main class="codeForm">
         <form>
+            <!-- Campo para a mensagem que será criptografada -->
             <h1>Decodificador de Textos</h1>
-            <label for="message">Escreva uma mensagem:</label>
-            <textarea name="message" id="enterCode" cols="30" rows="5"></textarea>
+            <label for="enterCode">Escreva uma mensagem:</label>
+            <textarea type="text" id="enterCode" cols="30" rows="5"></textarea>
 
+            <!-- Campo de seleção para os métodos de criptografia -->
             <div class="method">
                 <label for="changeCod">Escolha um dos métodos abaixo:</label>
                 <select name="cod" id="changeCod">
-                    <option value="" checked>Códigos</option>
+                    <option value="" disabled selected>Códigos</option>
                     <option value="Cifra de César" id="cesar">Cifra de César</option>
                     <option value="Base64" id="base64">Base64</option>
                 </select>
+                <label class="increment">Incremento 1-26</label>
             </div>
-            
+
+            <!-- Campo com os radias para codificar ou decodificar a mensagem -->
             <div class="optionCode">
                 <label>
                     Codificar
@@ -35,7 +39,8 @@
                 <input type="button" id="buttonCripto" value="">
             </div>
 
-            <textarea name="message" id="closeCode" cols="30" rows="5"></textarea>
+            <!-- Campo para exibir a mensagem criptografada -->
+            <textarea type="text" id="closeCode" cols="30" rows="5" value=""></textarea>
         </form>
     </main>
     <div class="redes">
