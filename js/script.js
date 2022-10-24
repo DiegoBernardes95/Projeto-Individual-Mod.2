@@ -10,7 +10,7 @@ let select = document.querySelector('#changeCod');
 let increment = document.querySelector('.increment');
 let inputIncrement = document.createElement('input');
 inputIncrement.type = 'number';
-inputIncrement.max = '26';
+inputIncrement.max = '25';
 inputIncrement.min = '1';
 increment.append(inputIncrement);
 increment.remove();
@@ -57,14 +57,14 @@ buttonCripto.addEventListener('click', cesarCodify);
 function cesarCodify(){
     let optionResultCesar = buttonCripto.value;
     let numIncrement = (Number(inputIncrement.value) % 26); // essa variável limita o deslocamento do incremento.
-    let alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"; // alfabeto para fazer a condificação.
-    let valueCodeCesar = enterCode.value.toLowerCase(); // essa váriavel transforma em minúscula as letras do campo de texto onde o usuário digita, para que no if os valores sejam semelhantes quando comparados com o alphabet.
+    const alphabet = ['.','-',',','!','?','é','ê','ú','ó','õ','á','í','ã','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-',',','!','?','é','ê','ú','ó','õ','á','í','ã','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
+    let valueCodeCesar = enterCode.value.toLowerCase();
     let messageCodify = ''; // variável onde a mensagem codificada vai ser inserida.
     if(select.value === 'Cifra de César' && optionResultCesar === 'Codificar'){
-        for(let i = 0; i < valueCodeCesar.length; i++){ // Vai ler cada caractere inserido na área de texto.
-            for(let j = 0; j < alphabet.length; j++){ // Vai ler os caracteres do alphabet, tendo de ponto de referência o 'For' que pertence.
-                if(valueCodeCesar[i] == alphabet[j]){ // condição para acontecer a criptografia.
-                    messageCodify += alphabet [j + numIncrement]; // será inserido no messageCodify a string do alphabet a partir do incremento escolhido pelo usuário.
+        for(let i = 0; i < valueCodeCesar.length; i++){
+            for(let j = 0; j < alphabet.length; j++){
+                if(valueCodeCesar[i] == alphabet[j]){
+                    messageCodify += alphabet [j + numIncrement];
                     break;
                 } else if(valueCodeCesar[i] == ' '){
                     messageCodify += ' ';
@@ -89,3 +89,4 @@ function cesarCodify(){
             return closeCode.value = messageCodify; 
         }
 };
+
