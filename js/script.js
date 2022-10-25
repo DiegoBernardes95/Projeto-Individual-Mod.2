@@ -57,7 +57,7 @@ buttonCripto.addEventListener('click', cesarCodify);
 function cesarCodify(){
     let optionResultCesar = buttonCripto.value;
     let numIncrement = (Number(inputIncrement.value) % 26); // essa variável limita o deslocamento do incremento.
-    const alphabet = ['.','-',',','!','?','é','ê','ú','ó','õ','á','í','ã','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.','-',',','!','?','é','ê','ú','ó','õ','á','í','ã','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
+    let alphabet = ['.',',','!','?','é','ê','ú','ó','õ','á','í','ã','â','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','.',',','!','?','é','ê','ú','ó','õ','á','í','ã','â','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
     let valueCodeCesar = enterCode.value.toLowerCase();
     let messageCodify = ''; // variável onde a mensagem codificada vai ser inserida.
     if(select.value === 'Cifra de César' && optionResultCesar === 'Codificar'){
@@ -72,7 +72,7 @@ function cesarCodify(){
                 }
             }
         }
-        return closeCode.value = messageCodify; 
+        return closeCode.value = messageCodify.replace(/,/g, ','); 
 
     } else if(select.value === 'Cifra de César' && optionResultCesar === 'Decodificar'){
             for(let i = 0; i < valueCodeCesar.length; i++){
