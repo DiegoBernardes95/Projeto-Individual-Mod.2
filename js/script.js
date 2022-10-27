@@ -3,12 +3,12 @@ let cesar = document.querySelector('#cesar');
 let base64 = document.querySelector('#base64');
 let enterCode = document.querySelector('#enterCode');
 let closeCode = document.querySelector('#closeCode');
-let method = document.querySelector('.method');
-let select = document.querySelector('#changeCod');
-let increment = document.querySelector('.increment');
 let buttonCripto = document.querySelector('#buttonCripto');
 
 // Código do campo de seleção para escolher o método de criptografia.
+let method = document.querySelector('.method');
+let select = document.querySelector('#changeCod');
+let increment = document.querySelector('.increment');
 let inputIncrement = document.createElement('input');
 inputIncrement.type = 'number';
 inputIncrement.max = '25';
@@ -60,8 +60,8 @@ buttonCripto.addEventListener('click', cesarCodify);
 function cesarCodify(){
     let optionResultCesar = buttonCripto.value;
     let numIncrement = (Number(inputIncrement.value) % 26); // essa variável limita o deslocamento do incremento.
-    let alphabet = ['é','ê','ú','ü','ó','õ','à','á','í','ã','â','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','é','ê','ú','ü','ó','õ','à','á','í','ã','â','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
-    let valueCodeCesar = enterCode.value.toLowerCase();
+    let alphabet = ['Â','Ã','Á','À','É','Ê','Í','Ì','Ó','Õ','Ú','Ç','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','â','ã','á','à','é','ê','í','ì','ó','õ','ú','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
+    let valueCodeCesar = enterCode.value;
     let messageCodify = ''; // variável onde a mensagem codificada vai ser inserida.
     if(select.value === 'Cifra de César' && optionResultCesar === 'Codificar'){
         for(let i = 0; i < valueCodeCesar.length; i++){
