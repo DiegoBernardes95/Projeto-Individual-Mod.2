@@ -28,7 +28,11 @@ form{
 form h1{
     margin-left: 15px;
     margin-right: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+form p{
+    margin: 20px 30px 40px 20px;
+    font-size: 14px;
 }
 form label{
     font-size: 13px;

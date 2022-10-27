@@ -1,13 +1,14 @@
-// Variáveis do campo de seleção e das áreas de texto
+// Variáveis do campo de seleção, das áreas de texto e do botão.
 let cesar = document.querySelector('#cesar');
 let base64 = document.querySelector('#base64');
 let enterCode = document.querySelector('#enterCode');
 let closeCode = document.querySelector('#closeCode');
-
-// Código do campo de seleção para escolher o método de criptografia
 let method = document.querySelector('.method');
 let select = document.querySelector('#changeCod');
 let increment = document.querySelector('.increment');
+let buttonCripto = document.querySelector('#buttonCripto');
+
+// Código do campo de seleção para escolher o método de criptografia.
 let inputIncrement = document.createElement('input');
 inputIncrement.type = 'number';
 inputIncrement.max = '25';
@@ -23,8 +24,7 @@ function incrementFunction(){
     }
 }
 
-// Código para o texto do botão mudar de acordo com o campo radial selecionado
-let buttonCripto = document.querySelector('#buttonCripto');
+// Código para o texto do botão mudar de acordo com o campo radial selecionado.
 buttonCripto.addEventListener('click', function(buttonDefault){
     buttonDefault.preventDefault();
 })
