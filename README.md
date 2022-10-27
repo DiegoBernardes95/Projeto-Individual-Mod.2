@@ -1,4 +1,4 @@
-# Projeto Individual do Módulo 2 - Mensagem Oculta
+# The Codificator - Mensagem Oculta
 
 <p>Projeto desenvolvido para o usuário codificar ou decodificar uma mensagem utilizando Base64 ou Cifra de César.</p>
 
@@ -19,6 +19,8 @@
 
 <p>Para o desenvolvimento do projeto foi utilizado o material apresentado nas aulas e disponibilizado pelo Resilia Educação.</p>
 
-<h2>O Site</h2>
+<h2>O Projeto</h2>
+
+<img src="https://user-images.githubusercontent.com/113109526/198274221-65e0afeb-1637-453d-9a2e-96222b1de44b.png">
 
 <p>📌 Para acessar a página do projeto no GitHub Pages, <a href="https://diegobernardes95.github.io/Projeto-Mensagem-Oculta/">clique aqui</a>.</p>
