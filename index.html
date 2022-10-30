@@ -19,8 +19,8 @@
 
             <!-- Campo de seleção para os métodos de criptografia -->
             <div class="method">
-                <label for="changeCod">Escolha um dos métodos abaixo:</label>
-                <select name="cod" id="changeCod">
+                <label for="chooseCod">Escolha um dos métodos abaixo:</label>
+                <select name="cod" id="chooseCod">
                     <option value="" disabled selected>Métodos</option>
                     <option value="Cifra de César" id="cesar">Cifra de César</option>
                     <option value="Base64" id="base64">Base64</option>
@@ -42,14 +42,16 @@
             </div>
 
             <!-- Campo para exibir a mensagem criptografada -->
-            <textarea type="text" id="closeCode" cols="30" rows="5" value=""></textarea>
+            <textarea type="text" id="outputCode" cols="30" rows="5" value=""></textarea>
         </form>
     </main>
-    <div class="redes">
-        <a href="https://github.com/DiegoBernardes95" target="_blank"><img src="imagens/github.png" alt="ícone do GitHub"></a>
-        <a href="https://www.linkedin.com/in/diegobernardes-webdev/" target="_blank"><img src="imagens/linkedin.png" alt="ícone do LinkedIn"></a>
-    </div> 
-    <p>Desenvolvido por Diego Bernardes - 2022©</p>  
+    <footer>
+        <div class="redes">
+            <a href="https://github.com/DiegoBernardes95" target="_blank"><img src="imagens/github.png" alt="ícone do GitHub"></a>
+            <a href="https://www.linkedin.com/in/diegobernardes-webdev/" target="_blank"><img src="imagens/linkedin.png" alt="ícone do LinkedIn"></a>
+        </div>
+        <p>Desenvolvido por Diego Bernardes - 2022©</p>
+    </footer>
     <script src="js/script.js"></script> 
 </body>
 </html>

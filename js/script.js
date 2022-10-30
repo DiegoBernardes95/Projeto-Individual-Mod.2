@@ -1,14 +1,14 @@
 // Variáveis do campo de seleção, das áreas de texto e do botão.
-let cesar = document.querySelector('#cesar');
-let base64 = document.querySelector('#base64');
-let enterCode = document.querySelector('#enterCode');
-let closeCode = document.querySelector('#closeCode');
-let buttonCripto = document.querySelector('#buttonCripto');
+const cesar = document.querySelector('#cesar');
+const base64 = document.querySelector('#base64');
+const enterCode = document.querySelector('#enterCode');
+const result = document.querySelector('#outputCode');
+const buttonCripto = document.querySelector('#buttonCripto');
 
 // Código do campo de seleção para escolher o método de criptografia.
-let method = document.querySelector('.method');
-let select = document.querySelector('#changeCod');
-let increment = document.querySelector('.increment');
+const method = document.querySelector('.method');
+const select = document.querySelector('#chooseCod');
+const increment = document.querySelector('.increment');
 let inputIncrement = document.createElement('input');
 inputIncrement.type = 'number';
 inputIncrement.max = '25';
@@ -28,15 +28,15 @@ function incrementFunction(){
 buttonCripto.addEventListener('click', function(buttonDefault){
     buttonDefault.preventDefault();
 })
-let optionCode = document.querySelector('.optionCode');
+const optionCode = document.querySelector('.optionCode');
 buttonCripto.remove();
-let typeCripto = document.querySelector('#cripto');
+const typeCripto = document.querySelector('#cripto');
 typeCripto.addEventListener('click', buttonClickCripto);
 function buttonClickCripto(){
     optionCode.append(buttonCripto);
     buttonCripto.value = 'Codificar';
 }
-let typeDescripto = document.querySelector('#descripto');
+const typeDescripto = document.querySelector('#descripto');
 typeDescripto.addEventListener('click', buttonClickDescripto);
 function buttonClickDescripto(){
     optionCode.append(buttonCripto);
@@ -49,9 +49,9 @@ function base64Codify(){
     let valueCode = enterCode.value;
     let optionResult = buttonCripto.value;
     if(select.value === 'Base64' && optionResult === 'Codificar'){
-        closeCode.value = btoa(valueCode);
+        result.value = btoa(valueCode);
     } else if(select.value === 'Base64' && optionResult === 'Decodificar'){
-        closeCode.value = atob(valueCode);
+        result.value = atob(valueCode);
     }
 }
 
@@ -60,7 +60,8 @@ buttonCripto.addEventListener('click', cesarCodify);
 function cesarCodify(){
     let optionResultCesar = buttonCripto.value;
     let numIncrement = (Number(inputIncrement.value) % 26); // essa variável limita o deslocamento do incremento.
-    let alphabet = ['â','ã','á','à','é','ê','í','ì','ó','õ','ú','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','â','ã','á','à','é','ê','í','ì','ó','õ','ú','ç','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
+    const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
+    const simbols = ['â','ã','á','à','é','ê','è','í','ì','ó','ô','õ','ú','ç','!',',','?','"','.','-','+','=','&','%','$','#','(',')','*','/','^','~','|','@','<','>','{','}','[',']','_',';',':','0','1','3','4','5','6','7','8','9','¹','²','³','ª','º']; // lista com os símbolos. 
     let valueCodeCesar = enterCode.value.toLowerCase();
     let messageCodify = ''; // variável onde a mensagem codificada vai ser inserida.
     if(select.value === 'Cifra de César' && optionResultCesar === 'Codificar'){
@@ -74,8 +75,14 @@ function cesarCodify(){
                     break;
                 }
             }
+            for(let s = 0; s < simbols.length; s++){
+                if(valueCodeCesar[i] == simbols[s]){
+                    messageCodify += simbols[s];
+                    break;
+                } 
+            }    
         }
-        return closeCode.value = messageCodify; 
+        return result.value = messageCodify; 
 
     } else if(select.value === 'Cifra de César' && optionResultCesar === 'Decodificar'){
             for(let i = 0; i < valueCodeCesar.length; i++){
@@ -88,8 +95,13 @@ function cesarCodify(){
                         break;
                     }
                 }
+                for(let s = 0; s < simbols.length; s++){
+                    if(valueCodeCesar[i] == simbols[s]){
+                        messageCodify += simbols[s];
+                        break;
+                    }
+                } 
             }
-            return closeCode.value = messageCodify; 
+            return result.value = messageCodify; 
         }
 };
-
