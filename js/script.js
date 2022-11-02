@@ -35,12 +35,14 @@ typeCripto.addEventListener('click', buttonClickCripto);
 function buttonClickCripto(){
     optionCode.append(buttonCripto);
     buttonCripto.value = 'Codificar';
+    buttonCripto.style.backgroundColor = 'blue';
 }
 const typeDescripto = document.querySelector('#descripto');
 typeDescripto.addEventListener('click', buttonClickDescripto);
 function buttonClickDescripto(){
     optionCode.append(buttonCripto);
     buttonCripto.value = 'Decodificar';
+    buttonCripto.style.backgroundColor = 'red';
 }
 
 // Função para Base64
@@ -61,7 +63,7 @@ function cesarCodify(){
     let optionResultCesar = buttonCripto.value;
     let numIncrement = (Number(inputIncrement.value) % 26); // essa variável limita o deslocamento do incremento.
     const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
-    const simbols = ['â','ã','á','à','é','ê','è','í','ì','ó','ô','õ','ú','ç','!',',','?','"','.','-','+','=','&','%','$','#','(',')','*','/','^','~','|','@','<','>','{','}','[',']','_',';',':','0','1','3','4','5','6','7','8','9','¹','²','³','ª','º']; // lista com os símbolos. 
+    const simbols = ['â','ã','á','à','é','ê','è','í','ì','ó','ô','õ','ú','ç','!',',','?','"','.','-','+','=','&','%','$','#','(',')','*','/','^','~','|','@','<','>','{','}','[',']','_',';',':','0','1','3','4','5','6','7','8','9','¹','²','³','ª','º']; // array com os símbolos. 
     let valueCodeCesar = enterCode.value.toLowerCase();
     let messageCodify = ''; // variável onde a mensagem codificada vai ser inserida.
     if(select.value === 'Cifra de César' && optionResultCesar === 'Codificar'){
