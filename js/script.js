@@ -15,39 +15,36 @@ inputIncrement.max = '25';
 inputIncrement.min = '1';
 increment.append(inputIncrement);
 increment.remove();
-select.addEventListener('change', incrementFunction);
-function incrementFunction(){
+select.addEventListener('change', function (){
     if(select.value === 'Cifra de César'){
         method.append(increment);
     } else{
         increment.remove();
     }
-}
+});
 
 // Código para o texto do botão mudar de acordo com o campo radial selecionado.
-buttonCripto.addEventListener('click', function(buttonDefault){
-    buttonDefault.preventDefault();
-})
+buttonCripto.addEventListener('click', function(event){
+    event.preventDefault();
+});
 const optionCode = document.querySelector('.optionCode');
 buttonCripto.remove();
 const typeCripto = document.querySelector('#cripto');
-typeCripto.addEventListener('click', buttonClickCripto);
-function buttonClickCripto(){
+typeCripto.addEventListener('click', function (){
     optionCode.append(buttonCripto);
     buttonCripto.value = 'Codificar';
     buttonCripto.style.backgroundColor = 'blue';
-}
+});
+
 const typeDescripto = document.querySelector('#descripto');
-typeDescripto.addEventListener('click', buttonClickDescripto);
-function buttonClickDescripto(){
+typeDescripto.addEventListener('click', function (){
     optionCode.append(buttonCripto);
     buttonCripto.value = 'Decodificar';
     buttonCripto.style.backgroundColor = 'red';
-}
+});
 
 // Função para Base64
-buttonCripto.addEventListener('click', base64Codify);
-function base64Codify(){
+buttonCripto.addEventListener('click', function (){
     let valueCode = enterCode.value;
     let optionResult = buttonCripto.value;
     if(select.value === 'Base64' && optionResult === 'Codificar'){
@@ -55,11 +52,10 @@ function base64Codify(){
     } else if(select.value === 'Base64' && optionResult === 'Decodificar'){
         result.value = atob(valueCode);
     }
-}
+});
 
 // Função para Cifra de César
-buttonCripto.addEventListener('click', cesarCodify);
-function cesarCodify(){
+buttonCripto.addEventListener('click', function (){
     let optionResultCesar = buttonCripto.value;
     let numIncrement = (Number(inputIncrement.value) % 26); // essa variável limita o deslocamento do incremento.
     const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; // alfabeto para fazer a codificação.
@@ -106,4 +102,4 @@ function cesarCodify(){
             }
             return result.value = messageCodify; 
         }
-};
+});
