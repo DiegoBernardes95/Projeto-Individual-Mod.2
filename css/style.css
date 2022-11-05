@@ -20,7 +20,6 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     font-family: 'Silkscreen', cursive;
     margin-top: 30px;
     width: 50%;
@@ -78,6 +77,9 @@ form textarea{
 .optionCode{
     display: flex;
     flex-direction: column;
+}
+.optionCode input{
+    accent-color: green;
 }
 #buttonCripto{
     font-family: 'Silkscreen', cursive;
