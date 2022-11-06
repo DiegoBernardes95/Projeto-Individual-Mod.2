@@ -28,6 +28,15 @@ form h1{
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 20px;
+    animation: neon 3.5s infinite;
+}
+@keyframes neon{
+    0%, 39%, 41%, 59%, 61%, 99%{
+        text-shadow: white 0 0 12px, greenyellow 0 0 24px, greenyellow 0 0 36px;
+    }
+    40%, 60%, 100%{
+        text-shadow: none;
+    }
 }
 form p{
     margin: 20px 30px 40px 20px;
